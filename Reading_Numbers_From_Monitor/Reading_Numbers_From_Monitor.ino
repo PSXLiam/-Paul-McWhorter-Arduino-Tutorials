@@ -1,27 +1,21 @@
-int numBlinks;
-int j;
-int blinkTime = 500;
-int redPin = 12;
+float radius;
+float area;
+float pi = 3.14;
 
-String msg="How Many Blinks do you Want:"; 
-
+String msg1 = "What is the radius of your circle:"; 
+String msg2 = "Your Circle Has Area of ";
 void setup() {
   // put your setup code here, to run once:
 Serial.begin(9600);
-pinMode(redPin, OUTPUT);
-
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-Serial.println(msg);
+Serial.println(msg1);
 while (Serial.available()==0){} //While there is no data on the serial port
 
-numBlinks = Serial.parseInt();
-for (j=1; j<=numBlinks; j++){
-  digitalWrite(redPin, HIGH);
-  delay(blinkTime);
-  digitalWrite(redPin, LOW);
-  delay(blinkTime);
-  }
+radius = Serial.parseFloat();
+area=pi*radius*radius;
+Serial.print(msg2);
+Serial.println(area);
 }
