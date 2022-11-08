@@ -20,30 +20,40 @@ while (Serial.available()==0){} //While there is no data on the serial port
 myColor = Serial.readString();
 
 if (myColor.equalsIgnoreCase("red")){
-  digitalWrite(redPin, HIGH);
-  digitalWrite(greenPin, LOW);
-  digitalWrite(bluePin, LOW);
+  analogWrite(redPin, 255);
+  analogWrite(greenPin, 0);
+  analogWrite(bluePin, 0);
   }
 
 if (myColor.equalsIgnoreCase("green")){
-  digitalWrite(redPin, LOW);
-  digitalWrite(greenPin, HIGH);
-  digitalWrite(bluePin, LOW);
+  analogWrite(redPin, 0);
+  analogWrite(greenPin, 255);
+  analogWrite(bluePin, 0);
   }
 
 if (myColor.equalsIgnoreCase("blue")){
-  digitalWrite(redPin, LOW);
-  digitalWrite(greenPin, LOW);
-  digitalWrite(bluePin, HIGH);
+  analogWrite(redPin, 0);
+  analogWrite(greenPin, 0);
+  analogWrite(bluePin, 255);
   }
-if (myColor.equalsIgnoreCase("aqua")){
-  digitalWrite(redPin, LOW);
-  digitalWrite(greenPin, LOW);
-  digitalWrite(bluePin, LOW);
+if (myColor.equalsIgnoreCase("yellow")){
+  analogWrite(redPin, 255);
+  analogWrite(greenPin, 100);
+  analogWrite(bluePin, 0);
+  }
+if (myColor.equalsIgnoreCase("cyan")){
+  analogWrite(redPin, 0);
+  analogWrite(greenPin, 255);
+  analogWrite(bluePin, 255);
+  }
+if (myColor.equalsIgnoreCase("magenta")){
+  analogWrite(redPin, 255);
+  analogWrite(greenPin, 0);
+  analogWrite(bluePin, 100);
   }
 if (myColor.equalsIgnoreCase("off")){
-  digitalWrite(redPin, LOW);
-  digitalWrite(greenPin, LOW);
-  digitalWrite(bluePin, LOW);
+  analogWrite(redPin, 0);
+  analogWrite(greenPin, 0);
+  analogWrite(bluePin, 0);
   }
 }
