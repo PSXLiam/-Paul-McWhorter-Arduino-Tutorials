@@ -1,7 +1,7 @@
 int speedPin = 5;
 int dir1 = 4; //HIGH
 int dir2 = 3; //LOW
-int mSpeed = 255;
+int mSpeed = 90;
 
 void setup() {
   // put your setup code here, to run once:
@@ -15,5 +15,10 @@ void loop() {
   // put your main code here, to run repeatedly:
 digitalWrite(dir1, LOW);
 digitalWrite(dir2, HIGH);
-analogWrite(speedPin, mSpeed); 
+//kickstart the motor for slower speeds
+analogWrite(speedPin, 255);
+delay(20);
+analogWrite(speedPin, mSpeed);
+delay(5000);
+ 
 }
